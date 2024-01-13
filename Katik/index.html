@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katik (Kalkulator Matematik)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-left">
+        <a href="#"
+          ><img
+            width="50"
+            height="50"
+            src="../Katik/assets/calculator.png"
+            alt="calculator"
+            class="left-icon"
+        /></a>
+        <h1>Katik <span>  Kalkulator Matematik</span></h1>
+      </div>
+      <!-- Dark/light theme switcher -->
+      <div class="theme-switch">
+        <input type="checkbox" class="checkbox" id="checkbox" />
+        <label for="checkbox" class="label">
+          <svg class="moon" width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 11.5066C3 16.7497 7.25034 21 12.4934 21C16.2209 21 19.4466 18.8518 21 15.7259C12.4934 15.7259 8.27411 11.5066 8.27411 3C5.14821 4.55344 3 7.77915 3 11.5066Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="sun" width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 2V1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 23V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="switcher"></div>
+        </label>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <section class="main-section animate__animated animate__zoomIn">
+        <div class="main-section-content">
+          <h2>Hi, Selamat datang di Katik!</h2>
+          <p>
+            Sebuah website sederhana yang berfungsi untuk menghitung nilai luas
+            dan keliling persegi.
+          </p>
+          <br />
+          <p>Klik button di bawah untuk mencoba</p>
+        </div>
+
+        <!-- Navigation Button -->
+        <div class="main-section-nav">
+          <ul>
+            <li>
+              <a class="luas-persegi" href="#luas-persegi-section"
+                >Luas Persegi</a
+              >
+            </li>
+            <li>
+              <a class="keliling-persegi" href="#keliling-persegi-section"
+                >Keliling Persegi</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Luas Persegi Section -->
+      <section class="luas-persegi-section" id="luas-persegi-section">
+        <div class="persegi-content">
+          <h3 class="persegi-title">Luas Persegi</h3>
+          <div class="persegi-img"></div>
+          <p>Rumus luas persegi yaitu:</p>
+          <p><b>L = S x S</b></p>
+          <p>dimana:</p>
+          <p>L = Luas (cm²)</p>
+          <p>S = Sisi</p>
+        </div>
+        <div class="hitung-luas-persegi-section">
+          <h3 class="persegi-title">Hitung Luas Persegi</h3>
+          <form action="">
+            <input
+              type="number"
+              id="input-sisi-luas"
+              placeholder="Masukkan nilai sisi"
+              required
+            />
+            <div
+              class="hasil-luas-persegi-content"
+              id="hasil-luas-persegi-content"
+            >
+              <p id="rumus-hitung-luas"></p>
+              <p id="rumus-luas"></p>
+              <p id="hasil-luas"></p>
+            </div>
+            <button
+              type="button"
+              id="btn-hitung-luas"
+              class="btn-hitung"
+              onclick="hitungLuas()"
+            >
+              <b>Hitung Luas</b>
+            </button>
+            <button
+              type="button"
+              id="btn-reset-hitung-luas"
+              class="btn-reset"
+              onclick="resetLuas()"
+            >
+            <b>Reset</b>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Keliling Persegi Section -->
+      <section class="keliling-persegi-section" id="keliling-persegi-section">
+        <div class="persegi-content">
+          <h3 class="persegi-title">Keliling Persegi</h3>
+          <div class="persegi-img"></div>
+          <p>Rumus keliling persegi yaitu:</p>
+          <p><b>K = 4 x S</b></p>
+          <p>dimana:</p>
+          <p>K = Keliling (cm)</p>
+          <p>S = Sisi</p>
+        </div>
+        <div class="hitung-keliling-persegi-section">
+          <h3 class="persegi-title">Hitung Keliling Persegi</h3>
+          <form action="">
+            <input
+              type="number"
+              id="input-sisi-keliling"
+              placeholder="Masukkan nilai sisi"
+              required
+            />
+            <div class="hasil-keliling-persegi-content">
+              <p id="rumus-hitung-keliling"></p>
+              <p id="rumus-keliling"></p>
+              <p id="hasil-keliling"></p>
+            </div>
+            <button
+              type="button"
+              id="btn-hitung-keliling"
+              class="btn-hitung"
+              onclick="hitungKeliling()"
+            >
+              <b>Hitung Keliling</b>
+            </button>
+            <button
+              type="button"
+              id="btn-reset-hitung-keliling"
+              class="btn-reset"
+              onclick="resetKeliling()"
+            >
+              <b>Reset</b>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- End of Main -->
+
+    <!-- Footer -->
+    <footer>
+      <p>
+       Coded by
+        <a href="https://github.com/cindytan36" target="_blank">CINDY</a>
+      </p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
